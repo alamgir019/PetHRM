@@ -1,9 +1,12 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using System;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using PetHRM.Repository.Data;
+using PetHRM.Repositories.Data;
+using PetHRM.Repositories.Repos.Employee;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 
 namespace PetHRM
 {
@@ -21,7 +24,9 @@ namespace PetHRM
         {
             var connectionString = _configuration.GetConnectionString("petHrmDB");
             services.AddDbContext<PetHrmDbContext>(options =>
-                    options.UseMySql(connectionString));
+                    options.UseMySql(connectionString,new MySqlServerVersion(new Version(10, 1, 40)), mySqlOptions => mySqlOptions
+                        .CharSetBehavior(CharSetBehavior.NeverAppend)));
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             services.AddControllers();
             services.AddSwaggerGen();
         }

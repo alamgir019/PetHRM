@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using PetHRM.Repository.Data.Model;
+﻿using Microsoft.EntityFrameworkCore;
+using PetHRM.Repositories.Data.Model;
 
-namespace PetHRM.Repository.Data
+namespace PetHRM.Repositories.Data
 {
     public class PetHrmDbContext : DbContext
     {
@@ -14,5 +9,17 @@ namespace PetHRM.Repository.Data
         {
         }
         public DbSet<Employee> Employees { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Employee>()
+                .HasKey(x => x.Id);
+
+            modelBuilder.Entity<Employee>()
+                .HasIndex(x => x.EmployeeId).IsUnique();
+            modelBuilder.Seed();
+        }
     }
 }

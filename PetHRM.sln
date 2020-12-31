@@ -5,9 +5,11 @@ VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetHRM", "PetHRM\PetHRM.csproj", "{DC765CFC-334F-4F44-8D3B-5A50DC6FFA95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetHRM.Services", "PetHRM.Services\PetHRM.Services.csproj", "{DC3A1AC7-8D5F-413B-BE14-9076C71800AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetHRM.Services", "PetHRM.Services\PetHRM.Services.csproj", "{DC3A1AC7-8D5F-413B-BE14-9076C71800AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetHRM.Repository", "PetHRM.Repository\PetHRM.Repository.csproj", "{9357A946-5829-4C0F-BA7E-1530C12DE054}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetHRM.Repositories", "PetHRM.Repository\PetHRM.Repositories.csproj", "{9357A946-5829-4C0F-BA7E-1530C12DE054}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetHRM.IntegrationTests", "PetHRM.IntegrationTests\PetHRM.IntegrationTests.csproj", "{290FE1C1-6553-454C-9D15-2F8EDA730BFA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{9357A946-5829-4C0F-BA7E-1530C12DE054}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9357A946-5829-4C0F-BA7E-1530C12DE054}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9357A946-5829-4C0F-BA7E-1530C12DE054}.Release|Any CPU.Build.0 = Release|Any CPU
+		{290FE1C1-6553-454C-9D15-2F8EDA730BFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{290FE1C1-6553-454C-9D15-2F8EDA730BFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{290FE1C1-6553-454C-9D15-2F8EDA730BFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{290FE1C1-6553-454C-9D15-2F8EDA730BFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

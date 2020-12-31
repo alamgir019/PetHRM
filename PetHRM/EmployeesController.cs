@@ -1,9 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using PetHRM.Repositories.Data.Model;
+using PetHRM.Repositories.Repos.Employee;
 
 namespace PetHRM
 {
@@ -11,10 +10,17 @@ namespace PetHRM
     [ApiController]
     public class EmployeesController : ControllerBase
     {
-        [HttpGet]
-        public ActionResult<string> Get()
+        private readonly IEmployeeRepository _employeeRepository;
+        
+        public EmployeesController(IEmployeeRepository employeeRepository)
         {
-            return new ActionResult<string>("Get Employee");
+            _employeeRepository = employeeRepository;
+        }
+        [HttpGet]
+        public async Task<ActionResult<List<Employee>>> Get()
+        {
+            var employees =  await _employeeRepository.GetEmployees();
+            return employees;
         }
     }
 }
