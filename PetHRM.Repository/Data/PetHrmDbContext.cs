@@ -21,11 +21,5 @@ namespace PetHRM.Repositories.Data
                 .HasIndex(x => x.EmployeeId).IsUnique();
             modelBuilder.Seed();
         }
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    optionsBuilder.UseMySql("server=localhost;port=3306;database=pet_hrm_db;user=root;password=;"
-        //        , new MySqlServerVersion(new Version(10, 1, 40)), mySqlOptions => mySqlOptions
-        //            .CharSetBehavior(CharSetBehavior.NeverAppend));
-        //}
     }
 }
