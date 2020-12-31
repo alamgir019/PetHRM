@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using PetHRM.Repository.Data.Model;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
+﻿using Microsoft.EntityFrameworkCore;
+using PetHRM.Repositories.Data.Model;
 
-namespace PetHRM.Repository.Data
+namespace PetHRM.Repositories.Data
 {
     public class PetHrmDbContext : DbContext
     {
@@ -25,6 +19,7 @@ namespace PetHRM.Repository.Data
 
             modelBuilder.Entity<Employee>()
                 .HasIndex(x => x.EmployeeId).IsUnique();
+            modelBuilder.Seed();
         }
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{

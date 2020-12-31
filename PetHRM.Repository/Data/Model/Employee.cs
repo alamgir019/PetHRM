@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PetHRM.Repository.Data.Model
+namespace PetHRM.Repositories.Data.Model
 {
     public class Employee : BaseEntity
     {
@@ -8,6 +8,7 @@ namespace PetHRM.Repository.Data.Model
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Designation { get; set; }
+        public string Address { get; set; }
 
     }
 
